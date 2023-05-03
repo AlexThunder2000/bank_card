@@ -1,4 +1,4 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
 class BankCarDTO {
   final String title;
@@ -7,9 +7,8 @@ class BankCarDTO {
   final String bi3;
   final String bi4;
   final String dateExp;
-  final Color start;
-  final Color end;
-  final Color titleColor;
+  final Color startColor;
+  final Color endColor;
 
   BankCarDTO({
     required this.title,
@@ -18,8 +17,7 @@ class BankCarDTO {
     required this.bi3,
     required this.bi4,
     required this.dateExp,
-    required this.start,
-    required this.end,
-    required this.titleColor,
+    required this.startColor,
+    required this.endColor,
   });
 }

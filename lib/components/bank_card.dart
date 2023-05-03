@@ -29,14 +29,15 @@ class BankCard extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: <Color>[
-            data.start,
-            data.end,
+            data.startColor,
+            data.endColor,
           ],
         ),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Row(
               children: [
@@ -79,17 +80,17 @@ class BankCard extends StatelessWidget {
     return Text(
       number,
       style: TextStyle(
-        color: data.titleColor,
+        color: data.endColor.computeLuminance() > 0.5 ? Colors.black : Colors.white,
         fontSize: 18,
       ),
     );
   }
 
-  Widget date(String data) {
+  Widget date(String dateExp) {
     return Text(
-      data,
-      style: const TextStyle(
-        color: Colors.white,
+      dateExp,
+      style: TextStyle(
+        color: data.endColor.computeLuminance() > 0.5 ? Colors.black : Colors.white,
         fontSize: 18,
       ),
     );
